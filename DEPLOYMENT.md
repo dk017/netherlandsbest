@@ -22,13 +22,18 @@ PORT=3002 pm2 start ecosystem.config.cjs
 pm2 save
 ```
 
-## Caddy
+The current Hetzner server for the related apps uses Nginx on ports 80/443, with WerkCV reverse-proxied to port 3001.
+Deploy NetherlandsBest on local port `3002` to avoid the existing apps.
 
-Copy `Caddyfile` to `/etc/caddy/Caddyfile`, then reload:
+## Nginx
+
+Copy `nginx.netherlandsbest.conf` to `/etc/nginx/sites-available/netherlandsbest.nl`, symlink it, and reload:
 
 ```bash
-sudo caddy validate --config /etc/caddy/Caddyfile
-sudo systemctl reload caddy
+sudo ln -s /etc/nginx/sites-available/netherlandsbest.nl /etc/nginx/sites-enabled/netherlandsbest.nl
+sudo nginx -t
+sudo systemctl reload nginx
+sudo certbot --nginx -d netherlandsbest.nl -d www.netherlandsbest.nl
 ```
 
 ## Updates
