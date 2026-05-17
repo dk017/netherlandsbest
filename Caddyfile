@@ -1,0 +1,9 @@
+netherlandsbest.nl, www.netherlandsbest.nl {
+  encode gzip zstd
+  reverse_proxy 127.0.0.1:3002
+
+  header {
+    X-Content-Type-Options nosniff
+    Referrer-Policy strict-origin-when-cross-origin
+  }
+}
