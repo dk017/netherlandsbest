@@ -1,6 +1,39 @@
 import { PrismaClient } from "@prisma/client";
+import { existsSync, readFileSync } from "fs";
+import path from "path";
 
 const prisma = new PrismaClient();
+
+function readMarkdownArticle(
+  fileName: string,
+  metadata: {
+    title: string;
+    slug: string;
+    category: string;
+    seoTitle: string;
+    metaDescription: string;
+    pinterestDescription: string;
+    featured?: boolean;
+  }
+) {
+  const articlePath = path.join(process.cwd(), "articles", fileName);
+  if (!existsSync(articlePath)) return null;
+
+  const raw = readFileSync(articlePath, "utf8").trim();
+  const coverImage = raw.match(/!\[[^\]]*]\(([^)]+)\)/)?.[1] ?? "";
+  const content = raw
+    .replace(/^# .+\r?\n+/, "")
+    .replace(/^!\[[^\]]*]\([^)]+\)\r?\n\*[^*\r\n]+?\*\r?\n+/, "")
+    .trim();
+
+  return {
+    ...metadata,
+    coverImage,
+    featured: metadata.featured ?? false,
+    published: true,
+    content
+  };
+}
 
 const categories = [
   {
@@ -139,6 +172,29 @@ Choose the area based on how you want to move through the city, not only the hot
   }
 ];
 
+const markdownArticles = [
+  readMarkdownArticle("article-1-updated.md", {
+    title: "Moving to the Netherlands: Complete Expat Checklist 2025",
+    slug: "moving-to-the-netherlands-expat-checklist",
+    category: "expat-life",
+    seoTitle: "Moving to the Netherlands: Complete Expat Checklist 2025",
+    metaDescription:
+      "A practical Netherlands relocation checklist for expats, covering housing, gemeente registration, BSN, banking, health insurance, DigiD, transport, and the first three months.",
+    pinterestDescription:
+      "Save this complete moving to the Netherlands checklist for expats covering BSN, gemeente registration, banking, health insurance, housing, and first-month setup."
+  }),
+  readMarkdownArticle("article-2-updated.md", {
+    title: "How to Get Your BSN Number in the Netherlands (2025 Guide)",
+    slug: "how-to-get-bsn-number-netherlands",
+    category: "expat-life",
+    seoTitle: "How to Get Your BSN Number in the Netherlands: 2025 Guide",
+    metaDescription:
+      "A clear 2025 guide to getting your BSN number in the Netherlands, including who needs one, gemeente appointments, required documents, timelines, RNI registration, and common problems.",
+    pinterestDescription:
+      "Save this BSN number guide for the Netherlands with the documents, appointment steps, timeline, RNI option, and common expat problems explained."
+  })
+].filter((article): article is NonNullable<typeof article> => Boolean(article));
+
 async function main() {
   for (const category of categories) {
     await prisma.category.upsert({
@@ -148,7 +204,7 @@ async function main() {
     });
   }
 
-  for (const article of articles) {
+  for (const article of [...articles, ...markdownArticles]) {
     await prisma.article.upsert({
       where: { slug: article.slug },
       update: article,
