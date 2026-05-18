@@ -110,6 +110,10 @@ jobs:
 
             ln -sfn "$RELEASE_DIR" "$APP_DIR/current"
             cd "$APP_DIR/current"
-            pm2 startOrReload ecosystem.production.cjs --update-env
+            export NODE_ENV=production
+            export PORT=3002
+            export HOSTNAME=127.0.0.1
+            pm2 delete netherlandsbest >/dev/null 2>&1 || true
+            pm2 start server.js --name netherlandsbest --cwd "$APP_DIR/current" --update-env
             pm2 save
             curl -fsS http://127.0.0.1:3002/ >/dev/null

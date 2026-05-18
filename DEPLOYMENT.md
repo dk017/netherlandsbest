@@ -39,7 +39,7 @@ Watch it:
 gh run watch --repo dk017/netherlandsbest --exit-status
 ```
 
-The workflow builds `.next/standalone` on GitHub, deploys it under `/opt/netherlandsbest/releases/<sha>`, updates `/opt/netherlandsbest/current`, and restarts PM2.
+The workflow builds `.next/standalone` on GitHub, deploys it under `/opt/netherlandsbest/releases/<sha>`, updates `/opt/netherlandsbest/current`, and restarts PM2 with `server.js`.
 
 Persistent production data lives outside releases:
 
