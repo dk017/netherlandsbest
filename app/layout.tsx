@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "NetherlandsBest.nl",
     description: "Premium travel and expat guides for the Netherlands."
+  },
+  other: {
+    "p:domain_verify": "6fe0559c93884bf712c999203c9da49b"
   }
 };
 

@@ -1,0 +1,115 @@
+name: Build and deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: "Deploy to Hetzner after building"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+      deploy_dir:
+        description: "Remote app directory"
+        required: true
+        default: "/opt/netherlandsbest"
+
+jobs:
+  build:
+    name: Build standalone app
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        env:
+          DATABASE_URL: "file:./build.db"
+          ADMIN_PASSWORD: "build-only"
+          NEXT_PUBLIC_SITE_URL: "https://netherlandsbest.nl"
+          NEXT_PUBLIC_ANALYTICS_SRC: ""
+        run: |
+          npm run db:push
+          npm run db:seed
+          npm run build
+
+      - name: Package standalone release
+        run: |
+          mkdir -p release/.next release/public
+          cp -R .next/standalone/. release/
+          cp -R .next/static release/.next/static
+          cp -R public/. release/public/
+          cp ecosystem.production.cjs release/ecosystem.production.cjs
+          tar -czf netherlandsbest-release.tgz -C release .
+
+      - name: Upload release artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: netherlandsbest-release
+          path: netherlandsbest-release.tgz
+          retention-days: 7
+
+  deploy:
+    name: Deploy to Hetzner
+    runs-on: ubuntu-latest
+    needs: build
+    if: ${{ github.event.inputs.deploy == 'true' }}
+
+    steps:
+      - name: Download release artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: netherlandsbest-release
+
+      - name: Copy release to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HETZNER_HOST }}
+          username: ${{ secrets.HETZNER_USER }}
+          key: ${{ secrets.HETZNER_SSH_KEY }}
+          source: "netherlandsbest-release.tgz"
+          target: "/tmp/netherlandsbest-${{ github.sha }}"
+
+      - name: Activate release
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.HETZNER_HOST }}
+          username: ${{ secrets.HETZNER_USER }}
+          key: ${{ secrets.HETZNER_SSH_KEY }}
+          script: |
+            set -eu
+            APP_DIR="${{ github.event.inputs.deploy_dir }}"
+            RELEASE_DIR="$APP_DIR/releases/${{ github.sha }}"
+            SHARED_DIR="$APP_DIR/shared"
+
+            mkdir -p "$RELEASE_DIR" "$SHARED_DIR/uploads"
+            tar -xzf "/tmp/netherlandsbest-${{ github.sha }}/netherlandsbest-release.tgz" -C "$RELEASE_DIR"
+            rm -rf "$RELEASE_DIR/public/uploads"
+            ln -sfn "$SHARED_DIR/uploads" "$RELEASE_DIR/public/uploads"
+
+            if [ ! -f "$APP_DIR/.env" ]; then
+              echo "Missing $APP_DIR/.env" >&2
+              exit 1
+            fi
+
+            set -a
+            . "$APP_DIR/.env"
+            set +a
+
+            ln -sfn "$RELEASE_DIR" "$APP_DIR/current"
+            cd "$APP_DIR/current"
+            pm2 startOrReload ecosystem.production.cjs --update-env
+            pm2 save
+            curl -fsS http://127.0.0.1:3002/ >/dev/null

@@ -18,7 +18,7 @@ export async function POST(request: Request) {
   const buffer = Buffer.from(bytes);
   const extension = path.extname(file.name) || ".jpg";
   const filename = `${Date.now()}-${Math.random().toString(36).slice(2)}${extension}`;
-  const uploadDir = path.join(process.cwd(), "public", "uploads");
+  const uploadDir = process.env.UPLOAD_DIR || path.join(process.cwd(), "public", "uploads");
   await mkdir(uploadDir, { recursive: true });
   await writeFile(path.join(uploadDir, filename), buffer);
 
