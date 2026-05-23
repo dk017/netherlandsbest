@@ -192,6 +192,16 @@ const markdownArticles = [
       "A clear 2025 guide to getting your BSN number in the Netherlands, including who needs one, gemeente appointments, required documents, timelines, RNI registration, and common problems.",
     pinterestDescription:
       "Save this BSN number guide for the Netherlands with the documents, appointment steps, timeline, RNI option, and common expat problems explained."
+  }),
+  readMarkdownArticle("article-3-dutch-desserts.md", {
+    title: "15 Best Dutch Desserts You Need to Try",
+    slug: "best-dutch-desserts",
+    category: "dutch-culture",
+    seoTitle: "15 Best Dutch Desserts to Try in the Netherlands",
+    metaDescription:
+      "A guide to the best Dutch desserts to try, from stroopwafels, poffertjes and appeltaart to tompouce, oliebollen, bossche bol, vlaai, hagelslag and more.",
+    pinterestDescription:
+      "Save this guide to 15 Dutch desserts to try in the Netherlands, including stroopwafels, poffertjes, appeltaart, tompouce, oliebollen, vlaai and more."
   })
 ].filter((article): article is NonNullable<typeof article> => Boolean(article));
 
