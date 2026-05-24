@@ -99,6 +99,10 @@ jobs:
 
             mkdir -p "$RELEASE_DIR" "$SHARED_DIR/uploads"
             tar -xzf "/tmp/netherlandsbest-${{ github.sha }}/netherlandsbest-release.tgz" -C "$RELEASE_DIR"
+            if [ -d "$RELEASE_DIR/public/uploads/generated" ]; then
+              mkdir -p "$SHARED_DIR/uploads"
+              cp -R "$RELEASE_DIR/public/uploads/generated" "$SHARED_DIR/uploads/"
+            fi
             rm -rf "$RELEASE_DIR/public/uploads"
             ln -sfn "$SHARED_DIR/uploads" "$RELEASE_DIR/public/uploads"
 
@@ -111,10 +115,6 @@ jobs:
             . "$APP_DIR/.env"
             set +a
 
-            if [ -d "$RELEASE_DIR/public/uploads/generated" ]; then
-              mkdir -p "$SHARED_DIR/uploads"
-              cp -R "$RELEASE_DIR/public/uploads/generated" "$SHARED_DIR/uploads/"
-            fi
             ln -sfn "$RELEASE_DIR" "$APP_DIR/current"
             cd "$APP_DIR/current"
             export NODE_ENV=production
