@@ -202,6 +202,16 @@ const markdownArticles = [
       "A guide to the best Dutch desserts to try, from stroopwafels, poffertjes and appeltaart to tompouce, oliebollen, bossche bol, vlaai, hagelslag and more.",
     pinterestDescription:
       "Save this guide to 15 Dutch desserts to try in the Netherlands, including stroopwafels, poffertjes, appeltaart, tompouce, oliebollen, vlaai and more."
+  }),
+  readMarkdownArticle("article-4-things-that-make-you-want-to-move.md", {
+    title: "10 Things About the Netherlands That Will Make You Want to Move There",
+    slug: "things-about-the-netherlands-that-make-you-want-to-move",
+    category: "dutch-culture",
+    seoTitle: "10 Things About the Netherlands That Will Make You Want to Move There",
+    metaDescription:
+      "Ten memorable Dutch traditions and everyday moments that make expats fall in love with life in the Netherlands, from Dodenherdenking to gezelligheid.",
+    pinterestDescription:
+      "Save these 10 things about Dutch life that make expats want to move to the Netherlands, including gezelligheid, Liberation Day, Dutch traditions and community life."
   })
 ].filter((article): article is NonNullable<typeof article> => Boolean(article));
 
