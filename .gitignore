@@ -5,4 +5,6 @@ node_modules
 *.db-journal
 public/uploads/*
 !public/uploads/.gitkeep
+!public/uploads/generated/
+!public/uploads/generated/**
 pm2.log

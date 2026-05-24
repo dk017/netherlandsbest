@@ -51,6 +51,9 @@ jobs:
           cp -R .next/standalone/. release/
           cp -R .next/static release/.next/static
           cp -R public/. release/public/
+          cp -R articles release/articles
+          mkdir -p release/scripts
+          cp scripts/seed-production.cjs release/scripts/seed-production.cjs
           cp ecosystem.production.cjs release/ecosystem.production.cjs
           tar -czf netherlandsbest-release.tgz -C release .
 
@@ -108,11 +111,16 @@ jobs:
             . "$APP_DIR/.env"
             set +a
 
+            if [ -d "$RELEASE_DIR/public/uploads/generated" ]; then
+              mkdir -p "$SHARED_DIR/uploads"
+              cp -R "$RELEASE_DIR/public/uploads/generated" "$SHARED_DIR/uploads/"
+            fi
             ln -sfn "$RELEASE_DIR" "$APP_DIR/current"
             cd "$APP_DIR/current"
             export NODE_ENV=production
             export PORT=3002
             export HOSTNAME=127.0.0.1
+            node scripts/seed-production.cjs
             pm2 delete netherlandsbest >/dev/null 2>&1 || true
             pm2 start server.js --name netherlandsbest --cwd "$APP_DIR/current" --update-env
             pm2 save

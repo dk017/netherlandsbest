@@ -204,14 +204,14 @@ const markdownArticles = [
       "Save this guide to 15 Dutch desserts to try in the Netherlands, including stroopwafels, poffertjes, appeltaart, tompouce, oliebollen, vlaai and more."
   }),
   readMarkdownArticle("article-4-things-that-make-you-want-to-move.md", {
-    title: "10 Things About the Netherlands That Will Make You Want to Move There",
+    title: "10 Things About Dutch Life That Make Expats Want to Move There",
     slug: "things-about-the-netherlands-that-make-you-want-to-move",
     category: "dutch-culture",
-    seoTitle: "10 Things About the Netherlands That Will Make You Want to Move There",
+    seoTitle: "10 Things About Dutch Life That Make Expats Want to Move There",
     metaDescription:
-      "Ten memorable Dutch traditions and everyday moments that make expats fall in love with life in the Netherlands, from Dodenherdenking to gezelligheid.",
+      "Ten practical, emotional and fun reasons expats fall for life in the Netherlands, from public trust and free festivals to gezelligheid and Dutch traditions.",
     pinterestDescription:
-      "Save these 10 things about Dutch life that make expats want to move to the Netherlands, including gezelligheid, Liberation Day, Dutch traditions and community life."
+      "Save these 10 benefits of Dutch life that make expats want to move to the Netherlands, including public trust, free festivals, gezelligheid and fun traditions."
   })
 ].filter((article): article is NonNullable<typeof article> => Boolean(article));
 
