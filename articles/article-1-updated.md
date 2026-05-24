@@ -1,6 +1,6 @@
 # Moving to the Netherlands: Complete Expat Checklist 2025
 
-![Amsterdam canal with traditional Dutch houses and bicycles](https://source.unsplash.com/1200x630/?amsterdam,canal,netherlands)
+![Amsterdam canal with traditional Dutch houses and bicycles](/uploads/generated/moving-to-the-netherlands-complete-expat-checklist-2025/01-amsterdam-canal-with-traditional-dutch-houses-and-bicycles.png)
 *Amsterdam's famous canal houses. Photo: Unsplash*
 
 So you're moving to the Netherlands. Congratulations. Now brace yourself for paperwork.
@@ -36,7 +36,7 @@ If your housing isn't ready when you land, book a short-stay apartment for the f
 
 ### Register at the Gemeente Within 5 Days
 
-![Inside a Dutch municipality office with staff helping expats](https://source.unsplash.com/1200x630/?netherlands,government,office)
+![Inside a Dutch municipality office with staff helping expats](/uploads/generated/moving-to-the-netherlands-complete-expat-checklist-2025/02-inside-a-dutch-municipality-office-with-staff-helping-expats.png)
 *Book your gemeente appointment before you land if possible. Photo: Unsplash*
 
 The moment you arrive, your clock starts. If you plan to stay longer than four months, Dutch law requires you to register at your local municipality (gemeente) within five days of arrival.
@@ -99,7 +99,7 @@ Apply at digid.nl/en as soon as you have your BSN. The activation code arrives b
 
 ### Arrange Dutch Health Insurance Within 4 Months
 
-![Dutch healthcare clinic exterior in Amsterdam](https://source.unsplash.com/1200x630/?netherlands,healthcare,clinic)
+![Dutch healthcare clinic exterior in Amsterdam](/uploads/generated/moving-to-the-netherlands-complete-expat-checklist-2025/03-dutch-healthcare-clinic-exterior-in-amsterdam.png)
 *Health insurance is legally required within four months of registration. Photo: Unsplash*
 
 If you're living or working in the Netherlands, basic Dutch health insurance (basisverzekering) is legally required. The deadline is four months after you register, but earlier is better. Gaps in coverage can mean fines.
@@ -133,7 +133,7 @@ You must always tap in AND tap out, or you'll be charged the maximum fare, or fi
 
 ### Buy a Bicycle
 
-![Rows of bicycles parked along an Amsterdam canal](https://source.unsplash.com/1200x630/?amsterdam,bicycle,bikes)
+![Rows of bicycles parked along an Amsterdam canal](/uploads/generated/moving-to-the-netherlands-complete-expat-checklist-2025/04-rows-of-bicycles-parked-along-an-amsterdam-canal.png)
 *The Netherlands has 23 million bicycles for 17.9 million people. Photo: Unsplash*
 
 This isn't a joke. The Netherlands has more bicycles than people: 23 million bikes for 17.9 million residents.[^4] Cycling isn't a lifestyle choice here, it's infrastructure. Your commute will be faster by bike than by car in most Dutch cities.

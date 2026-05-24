@@ -1,0 +1,45 @@
+{
+  "created_at": "2026-05-24T13:12:33.296398+00:00",
+  "images": [
+    {
+      "source_url": "https://source.unsplash.com/1200x630/?amsterdam,canal,netherlands",
+      "local_url": "/uploads/generated/moving-to-the-netherlands-complete-expat-checklist-2025/01-amsterdam-canal-with-traditional-dutch-houses-and-bicycles.png",
+      "alt": "Amsterdam canal with traditional Dutch houses and bicycles",
+      "section": "Moving to the Netherlands: Complete Expat Checklist 2025",
+      "prompt": "Create one premium editorial travel-magazine photograph for NetherlandsBest.nl.\nArticle: Moving to the Netherlands: Complete Expat Checklist 2025\nSection: Moving to the Netherlands: Complete Expat Checklist 2025\nImage subject: Amsterdam canal with traditional Dutch houses and bicycles\nArticle context near this image: So you're moving to the Netherlands. Congratulations. Now brace yourself for paperwork. The good news is that the Dutch system, while bureaucratic, is actually well-organised once you understand how it works. The bad news is that everything depends on everything else. You can't open a bank account without a BSN. You can't get a BSN without an address. You can't register an address without a landlord who cooperates. It's a chain, and if one link breaks, you're stuck. This checklist cuts through that confusion. Follow it in order, and your first weeks in the Netherlands will be significantly less stressful than most expats experience.\nStyle: realistic editorial photography, premium travel magazine, authentic Dutch atmosphere, minimal clutter\nMake it realistic and location-appropriate for the Netherlands.\nUse natural light, clean composition, warm but not oversaturated colors, and high-end magazine framing.\nDo not include text, captions, logos, watermarks, fake UI, distorted hands, or unreadable signage.\nThe image must work as a website article image and for Pinterest cropping.",
+      "model": "gpt-image-1.5",
+      "size": "1536x1024",
+      "quality": "high"
+    },
+    {
+      "source_url": "https://source.unsplash.com/1200x630/?netherlands,government,office",
+      "local_url": "/uploads/generated/moving-to-the-netherlands-complete-expat-checklist-2025/02-inside-a-dutch-municipality-office-with-staff-helping-expats.png",
+      "alt": "Inside a Dutch municipality office with staff helping expats",
+      "section": "Register at the Gemeente Within 5 Days",
+      "prompt": "Create one premium editorial travel-magazine photograph for NetherlandsBest.nl.\nArticle: Moving to the Netherlands: Complete Expat Checklist 2025\nSection: Register at the Gemeente Within 5 Days\nImage subject: Inside a Dutch municipality office with staff helping expats\nArticle context near this image: The moment you arrive, your clock starts. If you plan to stay longer than four months, Dutch law requires you to register at your local municipality (gemeente) within five days of arrival. This registration is how you get your BSN number (Burgerservicenummer), your Dutch citizen service number that unlocks basically everything else. Without it, you cannot legally work, open a bank account, access healthcare, or sign a rental contract. According to the Dutch government's official guidance, registration must happen at the gemeente where you will actually be living, not the nearest office to where you land.[^1] **How to register:** - Book an appointment online at your gemeente's website. Search\nStyle: realistic editorial photography, premium travel magazine, authentic Dutch atmosphere, minimal clutter\nMake it realistic and location-appropriate for the Netherlands.\nUse natural light, clean composition, warm but not oversaturated colors, and high-end magazine framing.\nDo not include text, captions, logos, watermarks, fake UI, distorted hands, or unreadable signage.\nThe image must work as a website article image and for Pinterest cropping.",
+      "model": "gpt-image-1.5",
+      "size": "1536x1024",
+      "quality": "high"
+    },
+    {
+      "source_url": "https://source.unsplash.com/1200x630/?netherlands,healthcare,clinic",
+      "local_url": "/uploads/generated/moving-to-the-netherlands-complete-expat-checklist-2025/03-dutch-healthcare-clinic-exterior-in-amsterdam.png",
+      "alt": "Dutch healthcare clinic exterior in Amsterdam",
+      "section": "Arrange Dutch Health Insurance Within 4 Months",
+      "prompt": "Create one premium editorial travel-magazine photograph for NetherlandsBest.nl.\nArticle: Moving to the Netherlands: Complete Expat Checklist 2025\nSection: Arrange Dutch Health Insurance Within 4 Months\nImage subject: Dutch healthcare clinic exterior in Amsterdam\nArticle context near this image: If you're living or working in the Netherlands, basic Dutch health insurance (basisverzekering) is legally required. The deadline is four months after you register, but earlier is better. Gaps in coverage can mean fines. **EU/EEA citizens:** You may be able to use a European Health Insurance Card (EHIC) temporarily, but you'll still need Dutch insurance for long-term residence. **Non-EU citizens:** Arrange Dutch insurance as a priority once your BSN is active. The main providers are Zilveren Kruis, VGZ, CZ, and Menzis. Prices are broadly similar, around \u20ac130 to \u20ac160 per month for basic coverage. Compare at zorgwijzer.nl, which is available in English.[^3] - [ ] Dutch health insurer selected\nStyle: realistic editorial photography, premium travel magazine, authentic Dutch atmosphere, minimal clutter\nMake it realistic and location-appropriate for the Netherlands.\nUse natural light, clean composition, warm but not oversaturated colors, and high-end magazine framing.\nDo not include text, captions, logos, watermarks, fake UI, distorted hands, or unreadable signage.\nThe image must work as a website article image and for Pinterest cropping.",
+      "model": "gpt-image-1.5",
+      "size": "1536x1024",
+      "quality": "high"
+    },
+    {
+      "source_url": "https://source.unsplash.com/1200x630/?amsterdam,bicycle,bikes",
+      "local_url": "/uploads/generated/moving-to-the-netherlands-complete-expat-checklist-2025/04-rows-of-bicycles-parked-along-an-amsterdam-canal.png",
+      "alt": "Rows of bicycles parked along an Amsterdam canal",
+      "section": "Buy a Bicycle",
+      "prompt": "Create one premium editorial travel-magazine photograph for NetherlandsBest.nl.\nArticle: Moving to the Netherlands: Complete Expat Checklist 2025\nSection: Buy a Bicycle\nImage subject: Rows of bicycles parked along an Amsterdam canal\nArticle context near this image: This isn't a joke. The Netherlands has more bicycles than people: 23 million bikes for 17.9 million residents.[^4] Cycling isn't a lifestyle choice here, it's infrastructure. Your commute will be faster by bike than by car in most Dutch cities. Second-hand bikes are cheap and widely available. Budget \u20ac80 to \u20ac150 for a solid used bike at a local shop or Marktplaats (the Dutch equivalent of Craigslist). Don't buy cheap. Bike theft is common and a good lock is as important as the bike itself. - [ ] Bicycle purchased - [ ] Two good locks bought - [ ] Bike registered (optional but useful if stolen)\nStyle: realistic editorial photography, premium travel magazine, authentic Dutch atmosphere, minimal clutter\nMake it realistic and location-appropriate for the Netherlands.\nUse natural light, clean composition, warm but not oversaturated colors, and high-end magazine framing.\nDo not include text, captions, logos, watermarks, fake UI, distorted hands, or unreadable signage.\nThe image must work as a website article image and for Pinterest cropping.",
+      "model": "gpt-image-1.5",
+      "size": "1536x1024",
+      "quality": "high"
+    }
+  ]
+}
